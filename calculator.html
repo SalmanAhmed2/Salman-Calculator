@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <style>
+    .main{
+        width: 250px;
+        height: 380px;
+        border:grey 3px solid;
+        background-color: black;
+        border-radius: 10px;
+        }
+    input{
+        width: 245px;
+        height: 150px;
+        border-radius: 8px;
+        background-color: black;
+        border-color: black;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: chocolate;
+    }
+button:hover{
+    background-color: chocolate;
+}
+button:nth-child(4n+5):hover{
+    background-color: grey;
+}
+
+    button{
+        width: 50px;
+        height: 50px;
+        border-radius: 30px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: grey;
+        color: white;
+        margin: 3px;
+        border: black 1px solid;
+    }
+    button:nth-child(4n+5){
+        background-color: chocolate;
+    }
+    </style>
+    <script>
+    function number(btnnum){
+        document.getElementById('input').value += btnnum;
+
+    }
+    function answer(){
+        var cexp = document.getElementById('input').value;
+        var ans = eval(cexp);
+        document.getElementById('input').value = ans;
+    }
+    function clearinp(CE){
+        var a = document.getElementById('input').value
+        document.getElementById('input').value = a.substring(0, a.length -1);
+    }
+    </script>
+</head>
+<body>
+<div class="main">
+    <input type="text" id="input" placeholder="Insert Number" disabled>
+    <button onclick="number(7)" >7</button>
+    <button onclick="number(8)" >8</button>
+    <button onclick="number(9)" >9</button>
+    <button onclick="number('*')">x</button>
+    <button onclick="number(4)" >4</button>
+    <button onclick="number(5)" >5</button>
+    <button onclick="number(6)" >6</button>
+    <button onclick="number('-')">-</button>
+    <button onclick="number(1)" >1</button>
+    <button onclick="number(2)" >2</button>
+    <button onclick="number(3)" >3</button>
+    <button onclick="number('+')">+</button>
+    <button onclick="clearinp()">CE</button>
+    <button onclick="number(0)" >0</button>
+    <button onclick="answer()">=</button>
+    <button onclick="number('/')">/</button>
+</div>    
+</body>
+</html>
